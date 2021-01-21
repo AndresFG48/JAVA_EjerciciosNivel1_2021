@@ -17,10 +17,11 @@ public class EjerciciosJavaNV1 {
     public int maximo (int[] lista) {
         int auxiliar = lista[0]; //El maximo va a ser el primer elemento del array.
         
-        if (auxiliar < lista[1]) {
-            auxiliar = lista[1];
+        for (int i = 0; i< lista.length; i++) {
+            if (auxiliar < lista[1]) {
+                auxiliar = lista[1];
+            }
         }
-        
         return auxiliar;
     }
 
@@ -29,7 +30,10 @@ public class EjerciciosJavaNV1 {
      */
     public static void main(String[] args) {
         EjerciciosJavaNV1 ejercicio = new EjerciciosJavaNV1();
-        System.out.println(ejercicio.listaNumeros);
+        System.out.println(ejercicio.listaNumeros[1]);
+        System.out.println(ejercicio.maximo(ejercicio.listaNumeros));
+        
+        
     }
     
 }
