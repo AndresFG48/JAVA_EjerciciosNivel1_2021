@@ -30,7 +30,6 @@ public class EjerciciosJavaNV1 {
      */
     public static void main(String[] args) {
         EjerciciosJavaNV1 ejercicio = new EjerciciosJavaNV1();
-        System.out.println(ejercicio.listaNumeros[1]);
         System.out.println(ejercicio.maximo(ejercicio.listaNumeros));
         
         
