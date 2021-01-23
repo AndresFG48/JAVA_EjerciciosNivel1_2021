@@ -46,18 +46,19 @@ public class EjerciciosJavaNV1 {
     int[] listaNumeros = {50, 31, 27, 2, 5, 99};
     
     private int[] maximos (int[] lista) {
-        int[] auxiliar = {lista[0], lista[0]};
-        
+        int[] maximos = {0,0};
         for (int i = 0; i < lista.length; i++) {
-           if (auxiliar[0] < lista[1]) {
-               auxiliar[0] = lista[1];   
-            } 
-           else if (auxiliar [1] < lista[1]) {
-               auxiliar[1] = lista[1];
-           }
-        }
+            if (lista [i] > maximos [0]) {
+                maximos [1] = maximos [0];
+                maximos [0] = lista [i];
+            }
+            
+            else if (lista [i] > maximos [1]) {
+                maximos [1] = lista [i];
+            }
+        } 
         
-        return auxiliar;
+        return maximos;
     }
     
      public static void main(String[] args) {
