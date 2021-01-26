@@ -41,6 +41,8 @@ public class EjerciciosJavaNV1 {
     }
      */
     /**
+     * ejercicio nivel1 ejer 1.
+     *
      * @param args the command line arguments
      */
     int[] listaNumeros = {50, 31, 27, 2, 5, 99};
@@ -60,7 +62,8 @@ public class EjerciciosJavaNV1 {
     }
 
     /**
-     * Metódo para quitar los espacios en blanco a un String.
+     * ejercicio nivel1 ejer 2. Metódo para quitar los espacios en blanco a un
+     * String.
      */
     private String quitaEspaciosBlancos(String cadena) {
 
@@ -80,7 +83,7 @@ public class EjerciciosJavaNV1 {
 
         //Este programa devuelve verdadero si la frase tiene los mismos caracteres 
         // de izquierda a derecha y de derecha a izquierda.
-        String auxiliar = quitaEspaciosBlancos (frase);
+        String auxiliar = quitaEspaciosBlancos(frase);
         return false; //No es palindromo.
     }
 
@@ -90,5 +93,7 @@ public class EjerciciosJavaNV1 {
 
         System.out.println("palíndromo: " + ejercicio.esPalindromo("Acaso hubo buhos aca"));
         System.out.println("palíndromo: " + ejercicio.esPalindromo("esto no es"));
+        System.out.println("palíndromo: " + ejercicio.esPalindromo("A mamá Roma le aviva el amor a papá y a papá Roma le aviva el amor a mamá"));
+        System.out.println("palíndromo: " + ejercicio.esPalindromo("Amad a la dama"));
     }
 }
