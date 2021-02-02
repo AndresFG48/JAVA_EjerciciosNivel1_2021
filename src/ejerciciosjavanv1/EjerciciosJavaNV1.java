@@ -47,7 +47,7 @@ public class EjerciciosJavaNV1 {
      */
     int[] listaNumeros = {50, 31, 27, 2, 5, 99};
 
-    private int[] maximos(int[] lista) {
+    public int[] maximos(int[] lista) {
         int[] maximos = {0, 0};
         for (int i = 0; i < lista.length; i++) {
             if (lista[i] > maximos[0]) {
@@ -83,8 +83,29 @@ public class EjerciciosJavaNV1 {
 
         //Este programa devuelve verdadero si la frase tiene los mismos caracteres 
         // de izquierda a derecha y de derecha a izquierda.
+        //1º Quitamos los espacios en blanco.
         String auxiliar = quitaEspaciosBlancos(frase);
-        return false; //No es palindromo.
+        
+        //2º Pasamos a minusculas toda la frase.
+        auxiliar = auxiliar.toLowerCase();
+        
+        //Voy a usar el metodo de los indices.
+        int indiceIzquierdo = 0;
+        int indiceDerecho = auxiliar.length() - 1;
+        while (auxiliar .charAt(indiceIzquierdo) == auxiliar.charAt(indiceDerecho) && indiceIzquierdo <= indiceDerecho) {
+            indiceDerecho--;
+            indiceIzquierdo++;
+        }
+        
+        if (indiceIzquierdo < indiceDerecho) {
+            
+            //Se ha salido antes de llegar al medio, por lo tanto no es palindromo.
+            return false;
+        }
+        
+        else { 
+         return true; //Si que es palindromo porque los indices se han cruzado.   
+        }
     }
 
     public static void main(String[] args) {
