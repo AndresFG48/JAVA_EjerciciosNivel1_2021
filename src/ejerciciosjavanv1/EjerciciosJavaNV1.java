@@ -106,8 +106,26 @@ public class EjerciciosJavaNV1 {
         else { 
          return true; //Si que es palindromo porque los indices se han cruzado.   
         }
-    }
-
+     }    
+        public boolean esIsogramas (String palabra) {
+           
+            //Este metodo devuelve true si la palabra no tiene ninguna letra repetida
+            // y false si se repite alguna.
+            //MURCIELAGO.
+            palabra = palabra.toLowerCase();
+            for (int i = 0; i < palabra.length(); i++) {
+                for (int j = i+1; j < palabra.length(); j++) {
+                    if (palabra.charAt(i) == palabra.charAt(j)) {
+                        return false;
+                    }
+                }
+            }
+            
+            //Si ha recorrido los dos bucles sin sair en el return false, es porque la palabra no tiene
+            // letras repetidas.
+            return true;
+        }
+   
     public static void main(String[] args) {
         EjerciciosJavaNV1 ejercicio = new EjerciciosJavaNV1();
         System.out.println("Los maximos son: " + Arrays.toString(ejercicio.maximos(ejercicio.listaNumeros)));
@@ -116,5 +134,9 @@ public class EjerciciosJavaNV1 {
         System.out.println("palíndromo: " + ejercicio.esPalindromo("esto no es"));
         System.out.println("palíndromo: " + ejercicio.esPalindromo("A mamá Roma le aviva el amor a papá y a papá Roma le aviva el amor a mamá"));
         System.out.println("palíndromo: " + ejercicio.esPalindromo("Amad a la dama"));
+        
+        System.out.println("La palabra murcielago " + ejercicio.esIsogramas("murcielago"));
+        System.out.println("La palabra careta " + ejercicio.esIsogramas("careta"));
+        System.out.println("La palabra ajos " + ejercicio.esIsogramas("ajos"));
     }
 }
