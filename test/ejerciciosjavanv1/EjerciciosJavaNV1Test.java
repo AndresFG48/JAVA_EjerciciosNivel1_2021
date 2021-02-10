@@ -37,20 +37,15 @@ public class EjerciciosJavaNV1Test {
     public void tearDown() {
     }
 
-//    /**
-//     * Test of maximos method, of class EjerciciosJavaNV1.
-//     */
-//    @Test
-//    public void testMaximos() {
-//        System.out.println("maximos");
-//        int[] lista = null;
-//        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
-//        int[] expResult = null;
-//        int[] result = instance.maximos(lista);
-//        assertArrayEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+    /**
+     * Test of maximos method, of class EjerciciosJavaNV1.
+     */
+    @Test
+    public void testMaximos() {
+        System.out.println("maximos");
+        int[] lista = null;
+        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
+    }
 
     /**
      * Test of esPalindromo method, of class EjerciciosJavaNV1.

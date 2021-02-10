@@ -145,7 +145,7 @@ public class EjerciciosJavaNV1 {
         auxiliar = auxiliar.toLowerCase();
 
         //3º Quitamos las tildes si existen.
-        auxiliar = quitaAcentosVersion2(frase);
+        auxiliar = quitaAcentosVersion2(auxiliar);
 
         //Voy a usar el metodo de los indices.
         int indiceIzquierdo = 0;
