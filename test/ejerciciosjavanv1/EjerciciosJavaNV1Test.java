@@ -37,20 +37,20 @@ public class EjerciciosJavaNV1Test {
     public void tearDown() {
     }
 
-    /**
-     * Test of maximos method, of class EjerciciosJavaNV1.
-     */
-    @Test
-    public void testMaximos() {
-        System.out.println("maximos");
-        int[] lista = null;
-        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
-        int[] expResult = null;
-        int[] result = instance.maximos(lista);
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    /**
+//     * Test of maximos method, of class EjerciciosJavaNV1.
+//     */
+//    @Test
+//    public void testMaximos() {
+//        System.out.println("maximos");
+//        int[] lista = null;
+//        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
+//        int[] expResult = null;
+//        int[] result = instance.maximos(lista);
+//        assertArrayEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of esPalindromo method, of class EjerciciosJavaNV1.
@@ -92,16 +92,68 @@ public class EjerciciosJavaNV1Test {
         assertEquals(false, instance.esIsogramas("isódroma"));
     }
 
+//    /**
+//     * Test of quitaAcentos method, of class EjerciciosJavaNV1.
+//     */
+//    @Test
+//    public void testQuitaAcentos() {
+//        System.out.println("quitaAcentos");
+//        String cadena = "";
+//        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
+//        String expResult = "";
+//        String result = instance.quitaAcentos(cadena);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+//    /**
+//     * Test of quitaAcentosVersion2 method, of class EjerciciosJavaNV1.
+//     */
+//    @Test
+//    public void testQuitaAcentosVersion2() {
+//        System.out.println("quitaAcentosVersion2");
+//        String cadena = "";
+//        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
+//        String expResult = "";
+//        String result = instance.quitaAcentosVersion2(cadena);
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
+//    /**
+//     * Test of divideFrase method, of class EjerciciosJavaNV1.
+//     */
+//    @Test
+//    public void testDivideFrase() {
+//        System.out.println("divideFrase");
+//        String frase = "";
+//        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
+//        String[] expResult = null;
+//        String[] result = instance.divideFrase(frase);
+//        assertArrayEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
+
     /**
-     * Test of main method, of class EjerciciosJavaNV1.
+     * Test of acronimo method, of class EjerciciosJavaNV1.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        EjerciciosJavaNV1.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testAcronimo() {
+        System.out.println("acronimo");
+        String frase_ = "";
+        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
+        assertEquals("AVE", instance.acronimo("Alta Velocidad Española"));
+        assertEquals("CETS", instance.acronimo("Centro de Estudios Tecnologicos y Sociales"));
+        assertEquals("OMS", instance.acronimo("Organizacion Mundial de la Salud"));
+        assertEquals("UFV", instance.acronimo("Universidad Francisco de Vitoria"));
+        assertEquals("ESO", instance.acronimo("educacion secundaria obligatoria"));
+        assertEquals("ITV", instance.acronimo("inspeccion tecnica de vehiculos"));
+        assertEquals("OTAN", instance.acronimo("organizacion trato atlantico norte"));
+        assertEquals("OTAN", instance.acronimo("organizacion trato atlantico  norte"));
+       
     }
 
     
