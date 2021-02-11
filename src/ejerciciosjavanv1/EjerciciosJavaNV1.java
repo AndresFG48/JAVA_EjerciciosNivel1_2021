@@ -294,6 +294,24 @@ public class EjerciciosJavaNV1 {
     }
     
     /**
+     * @param diasIniciales
+     * Son los dias con XX que hay que poner al inicio.
+     */
+    public void calendario (int diasIniciales) {
+        
+        //1º Imprimir las XX iniciales.
+        for (int i = 0; i < diasIniciales; i++) {
+            System.out.print("XX ");
+        }
+        
+        //2º Imprimimos los numeros del 1 al 31.
+        for (int i = 1; i <= 31; i++) {
+            System.out.print(i + " ");
+        }
+        
+    }
+    
+    /**
      * 
      * @param args the command line arguments
      */
@@ -311,7 +329,16 @@ public class EjerciciosJavaNV1 {
         System.out.println("La palabra ajos " + ejercicio.esIsogramas("ajos"));
 
         System.out.println(Arrays.toString(ejercicio.divideFrase("Alta Velocidad Española")));
+        System.out.println(ejercicio.acronimo("Alta Velocidad Española"));
         
-        ejercicio.esAnagrama("amor", "roma");
+        if (ejercicio.esAnagrama("amor", "roma")) {
+            System.out.println("Si que son anagramas");
+        }
+        
+        else {
+            System.out.println("No son anagramas");
+        }
+        
+        ejercicio.calendario(3);
     }
 }
