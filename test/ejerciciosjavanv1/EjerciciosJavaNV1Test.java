@@ -151,5 +151,27 @@ public class EjerciciosJavaNV1Test {
        
     }
 
-    
+
+    /**
+     * Test of esAnagrama method, of class EjerciciosJavaNV1.
+     */
+    @Test
+    public void testEsAnagrama() {
+        System.out.println("esAnagrama");
+        String palabra1 = "";
+        String palabra2 = "";
+        EjerciciosJavaNV1 instance = new EjerciciosJavaNV1();
+        assertEquals(true, instance.esAnagrama("amor", "Roma"));
+        assertEquals(true, instance.esAnagrama("roma", "amor"));
+        assertEquals(true, instance.esAnagrama("Claudia", "licuada"));
+        assertEquals(true, instance.esAnagrama("Helios", "hiÉlos"));
+        assertEquals(true, instance.esAnagrama("Alegan", "Ángela"));
+        assertEquals(false, instance.esAnagrama("ConServador", "conversadora"));
+        assertEquals(true, instance.esAnagrama("irónicamente", "Renacimiento"));
+        assertEquals(false, instance.esAnagrama("renacimiento", ""));
+        assertEquals(false, instance.esAnagrama("vela", "amo"));
+        assertEquals(false, instance.esAnagrama("casa", "caza"));
+        assertEquals(true, instance.esAnagrama("amor", "amor"));
+        
+    }
 }
