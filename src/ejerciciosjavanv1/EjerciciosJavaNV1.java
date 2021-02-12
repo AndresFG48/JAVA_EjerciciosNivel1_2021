@@ -292,7 +292,7 @@ public class EjerciciosJavaNV1 {
      */
     public void calendario(int diasIniciales) {
 
-        diasIniciales = diasIniciales % 7;
+        diasIniciales = Math.abs(diasIniciales % 7);
 
         //Contador para saber que dia de la semana estoy imprimiendo.
         int contador = 0;
@@ -370,6 +370,10 @@ public class EjerciciosJavaNV1 {
         ejercicio.calendario(10);
         System.out.println("Agosto");
         ejercicio.calendario(344444554);
-        System.out.println("");
+        System.out.println("Mes con numero negativo.");
+         ejercicio.calendario(-3);
+         System.out.println("");
+         
+        
     }
 }
