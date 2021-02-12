@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ejerciciosjavanv1;
+
 import java.util.Arrays;
 
 /**
@@ -34,14 +35,13 @@ public class EjerciciosJavaNV1 {
 //        EjerciciosJavaNV1 ejercicio = new EjerciciosJavaNV1();
 //        System.out.println(ejercicio.maximo(ejercicio.listaNumeros));   
 //    }
-
     /**
-     *Ejercicio nivel1 ejer 1.
-     *Maximo y segundo maximo.
+     * Ejercicio nivel1 ejer 1. Maximo y segundo maximo.
+     *
      * @param args the command line arguments
      */
     int[] listaNumeros = {50, 31, 27, 2, 5, 99};
-    
+
     //Declaro un array de integers para hacer pruebas
     public int[] maximos(int[] lista) {
         int[] maximos = {0, 0}; //El maximo va a ser el primer elemento del array.
@@ -58,8 +58,7 @@ public class EjerciciosJavaNV1 {
     }
 
     /**
-     * Metódo para quitar los espacios en blanco a un
-     * String.
+     * Metódo para quitar los espacios en blanco a un String.
      */
     private String quitaEspaciosBlancos(String cadena) {
 
@@ -129,12 +128,12 @@ public class EjerciciosJavaNV1 {
 
         return auxiliar;
     }
-    
+
     /**
-     * Ejercicio nivel1 ejer 2.
-     * Palindromo.
+     * Ejercicio nivel1 ejer 2. Palindromo.
+     *
      * @param frase
-     * @return 
+     * @return
      */
     public boolean esPalindromo(String frase) {
 
@@ -167,10 +166,10 @@ public class EjerciciosJavaNV1 {
     }
 
     /**
-     * Ejercicio nivel1 ejer 3.
-     * ES isograma
+     * Ejercicio nivel1 ejer 3. ES isograma
+     *
      * @param palabra
-     * @return 
+     * @return
      */
     public boolean esIsogramas(String palabra) {
 
@@ -194,11 +193,10 @@ public class EjerciciosJavaNV1 {
 
     /**
      * @param frase
-     * @return
-     * Creamos metodo para crear anagramas.
-     * Este metodo recibe un String formado por arias palabras y devuelve un
-     * array de String por ejemplo: ("Alta" "Velocidad" "Española"). Esta version
-     * solo se usara en las practicas no en la vida real.
+     * @return Creamos metodo para crear anagramas. Este metodo recibe un String
+     * formado por arias palabras y devuelve un array de String por ejemplo:
+     * ("Alta" "Velocidad" "Española"). Esta version solo se usara en las
+     * practicas no en la vida real.
      */
     public String[] divideFrase(String frase) {
         frase = frase + " "; //Metodo paco, añadir un espacio en blanco al final,
@@ -230,10 +228,8 @@ public class EjerciciosJavaNV1 {
     }
 
     /**
-     * Ejercicio nivel1 ejer 4.
-     * Acronimos.
-     * Recibe una y devuelve su acornimo (la primera letra de cada palabra que
-     * forma la frase).
+     * Ejercicio nivel1 ejer 4. Acronimos. Recibe una y devuelve su acornimo (la
+     * primera letra de cada palabra que forma la frase).
      *
      * @param frase_
      * @return
@@ -241,7 +237,7 @@ public class EjerciciosJavaNV1 {
     public String acronimo(String frase_) {
         frase_ = frase_.toUpperCase();
         //String[] palabras = divideFrase(frase_);
-        String [] palabras = frase_.split(" ");
+        String[] palabras = frase_.split(" ");
         String auxiliar = "";
         for (int i = 0; i < palabras.length; i++) {
             if (palabras[i].length() > 0) { //Para evitar el problema de las palabras vacias.
@@ -255,15 +251,15 @@ public class EjerciciosJavaNV1 {
     }
 
     /**
-     * Ejercicio nivel1 ejer 5.
-     * Anagrama.
-     * Este programa a recibir dos palabras y dar true si las palabras tiene las mismas letras o 
-     * false si una de ellas tiene mas, menos o distintas letras que la otra.
+     * Ejercicio nivel1 ejer 5. Anagrama. Este programa a recibir dos palabras y
+     * dar true si las palabras tiene las mismas letras o false si una de ellas
+     * tiene mas, menos o distintas letras que la otra.
+     *
      * @param palabra1
      * @param palabra2
-     * @return 
+     * @return
      */
-    public boolean esAnagrama (String palabra1, String palabra2) {
+    public boolean esAnagrama(String palabra1, String palabra2) {
         palabra1 = quitaEspaciosBlancos(palabra1);
         palabra2 = quitaEspaciosBlancos(palabra2);
         palabra1 = palabra1.toLowerCase(); //Para que todas las letras sean minusculas.
@@ -273,72 +269,107 @@ public class EjerciciosJavaNV1 {
         if (palabra1.length() != palabra2.length()) {
             return false; //No tienen el mismo numero de letras, luego no son anagramas.
         }
-        
+
         if (palabra1.length() == 0) {
             return false; //No tiene caracteres.
         }
-        
+
         //Amor => roma.
         for (int i = 0; i < palabra1.length(); i++) {
             if (palabra2.contains(String.valueOf(palabra1.charAt(i)))) {
                 //Busco donde esta la letra y luego hago algo con ella.
                 palabra2 = palabra2.replaceFirst("" + palabra1.charAt(i), "~");
-            }
-            
-            else {
+            } else {
                 return false;
             }
         }
-        
+
         return true;
     }
-    
+
     /**
-     * @param diasIniciales
-     * Son los dias con XX que hay que poner al inicio.
+     * @param diasIniciales Son los dias con XX que hay que poner al inicio.
      */
-    public void calendario (int diasIniciales) {
-        
+    public void calendario(int diasIniciales) {
+
+        diasIniciales = diasIniciales % 7;
+
+        //Contador para saber que dia de la semana estoy imprimiendo.
+        int contador = 0;
+
         //1º Imprimir las XX iniciales.
         for (int i = 0; i < diasIniciales; i++) {
             System.out.print("XX ");
+            contador++;
         }
-        
+
         //2º Imprimimos los numeros del 1 al 31.
         for (int i = 1; i <= 31; i++) {
-            System.out.print(i + " ");
+            if (i > 0 && i < 10) {
+                System.out.print("0" + i + " ");
+            } else {
+                System.out.print(i + " ");
+            }
+
+            contador++;
+            if (contador % 7 == 0) {
+                System.out.println("");
+            }
         }
-        
+
+        //3º colocar las XX finales.
+        while (contador % 7 != 0) {
+            System.out.print("XX ");
+            contador++;
+        }
+
+        System.out.println("");
     }
-    
+
     /**
-     * 
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         EjerciciosJavaNV1 ejercicio = new EjerciciosJavaNV1();
         System.out.println("Los maximos son: " + Arrays.toString(ejercicio.maximos(ejercicio.listaNumeros)));
+        System.out.println("");
 
         System.out.println("palíndromo: " + ejercicio.esPalindromo("Acaso hubo buhos aca"));
         System.out.println("palíndromo: " + ejercicio.esPalindromo("esto no es"));
         System.out.println("palíndromo: " + ejercicio.esPalindromo("A mamá Roma le aviva el amor a papá y a papá Roma le aviva el amor a mamá"));
         System.out.println("palíndromo: " + ejercicio.esPalindromo("Amad a la dama"));
+        System.out.println("");
 
         System.out.println("La palabra murcielago " + ejercicio.esIsogramas("murcielago"));
         System.out.println("La palabra careta " + ejercicio.esIsogramas("careta"));
         System.out.println("La palabra ajos " + ejercicio.esIsogramas("ajos"));
+        System.out.println("");
 
         System.out.println(Arrays.toString(ejercicio.divideFrase("Alta Velocidad Española")));
         System.out.println(ejercicio.acronimo("Alta Velocidad Española"));
-        
+        System.out.println("");
+
         if (ejercicio.esAnagrama("amor", "roma")) {
             System.out.println("Si que son anagramas");
-        }
-        
-        else {
+        } else {
             System.out.println("No son anagramas");
         }
-        
+
+        System.out.println("Enero");
         ejercicio.calendario(3);
+        System.out.println("Marzo");
+        ejercicio.calendario(5);
+        System.out.println("Diciembre");
+        ejercicio.calendario(12);
+        System.out.println("Mayo");
+        ejercicio.calendario(2);
+        System.out.println("Octumre");
+        ejercicio.calendario(6);
+        System.out.println("Julio");
+        ejercicio.calendario(10);
+        System.out.println("Agosto");
+        ejercicio.calendario(344444554);
+        System.out.println("");
     }
 }
